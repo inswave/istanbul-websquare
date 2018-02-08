@@ -1,0 +1,29 @@
+{
+  "name": "istanbul-websquare",
+  "description": "Code Coverage Middleware for WebSquare",
+  "version": "0.6.0",
+  "homepage": "https://github.com/inswave/websquare-min",
+  "author": {
+    "name": "Kim WoogLae",
+    "email": "wlkim@inswave.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/inswave/istanbul-websquare.git"
+  },
+  "bugs": {
+    "url": "https://github.com/inswave/istanbul-websquare/issues"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "istanbul": "0.4.x",
+    "express": "4.x",
+    "js-beautify": "1.7.x",
+    "body-parser": "~1.12.3",
+    "archiver": "0.14.x",
+    "http-proxy": "*"
+  },
+  "engines": {
+    "node": ">=0.6.x"
+  }
+}
