@@ -2,6 +2,4 @@
   "verbose" : false,
   "serverUrl" : "http://localhost:8080",
   "listenPort" : 3100
-
-
 }
