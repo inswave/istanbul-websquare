@@ -32,8 +32,8 @@ npm install
 * 테스트가 완료되면 페이지를 닫기전에 ____uploadCoverage()를 호출하거나 WebSquare.logger.getErrorLog()를 호출하면 서버로 전송되어 메모리에 적재된다. (selenium 테스트 소스에서는 마지막에 WebSquare.logger.getErrorLog()가 호출되어 항상 저장된다.)
 
 ## 테스트 결과 조회
-* [테스트 결과 조회](http://localhost:3100/coverage)
-* [테스트 결과 다운로드](http://localhost:3100/coverage/download)
+* [테스트 결과 조회 (http://localhost:3100/coverage)](http://localhost:3100/coverage)
+* [테스트 결과 다운로드 (http://localhost:3100/coverage/download)](http://localhost:3100/coverage/download)
 
 ## Release History
 
