@@ -3,9 +3,9 @@
 
 Coverage 측정도구인 [istanbul](https://istanbul.js.org/)를 웹스퀘어에서 사용할 수 있도록 구성한 proxy 서버로 js, wq 파일을 자동으로 감지하여 coverage를 측정할 수 있는 소스를 삽입한다.
 javascriptPluginAll.wq파일도 지원하지만 파일 크기가 커서 테스트 및 결과 조회에 시간이 많이 걸려서 js방식 또는 wq 파일 개별로딩 설정을 권장한다.
-'''xml
+```xml
 <engineLoadingMode ie="3" moz="3" opera="3" android="3" iphone="3" chrome="3" safari="3"/>
-'''
+```
 
 ## 설치 및 환경 구성
 
