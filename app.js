@@ -25,12 +25,13 @@ function matcher(req) {
   //console.log("A " + parsed.pathname);
   //console.log("A " + parsed.pathname.match(/javascript.*\.wq/));
   //console.log("A " + parsed.pathname.match(/\.js/));
-  if( (parsed.pathname && ( parsed.pathname.match(/\.js$/) || parsed.pathname.match(/javascript.*\.wq$/) ) && !parsed.pathname.match(/jquery/) && !parsed.pathname.match(/selenium/)) ) {
+  var flag = parsed.pathname && ( parsed.pathname.match(/\.js$/) || parsed.pathname.match(/javascript.*\.wq$/) ) && !parsed.pathname.match(/jquery/) && !parsed.pathname.match(/selenium/) && !parsed.pathname.match(/externalJS/);
+  if( flag) {
     if(config.verbose) console.log('[MATCHED]         ' + parsed.pathname );
   } else {
     if(config.verbose) console.log('[NOT MATCHED]     ' + parsed.pathname + "\n");
   }
-  return parsed.pathname && ( parsed.pathname.match(/\.js$/) || parsed.pathname.match(/javascript.*\.wq$/) ) && !parsed.pathname.match(/jquery/) && !parsed.pathname.match(/selenium/);
+  return flag;
 }
 /*
 function loadPathTransformer(req) {
