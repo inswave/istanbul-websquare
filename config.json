@@ -1,5 +1,10 @@
 {
-  "verbose" : false,
-  "serverUrl" : "http://localhost:8080",
-  "listenPort" : 3100
+    "verbose" : false,
+    "serverUrl" : "http://localhost:8080",
+    "listenPort" : 3100,
+    "excludeFileList" : [],
+    "includePath" : "",
+    "excludePath" : [],
+    "outputPath" : "",
+    "autoBackup" : 10
 }

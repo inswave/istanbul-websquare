@@ -12,13 +12,15 @@ var apiProxy = httpProxy.createProxyServer();
 
 config.listenPort = config.listenPort || 3200;
 
-console.log('==========================================================================')
-console.log('Coverage server URL  : http://localhost:' + config.listenPort );
-console.log('Coverage report      : http://localhost:' + config.listenPort + '/coverage');
-console.log('Download coverage    : http://localhost:' + config.listenPort + '/coverage/download');
-console.log('Reset coverage       : http://localhost:' + config.listenPort + '/coverage/reset');
-console.log('WebSquare URL(proxy) : ' + config.serverUrl );
-console.log('==========================================================================\n')
+console.log('=========================================================================')
+console.log('Coverage server URL   : http://localhost:' + config.listenPort );
+console.log('Coverage report       : http://localhost:' + config.listenPort + '/coverage/:browser');
+console.log('Download coverage     : http://localhost:' + config.listenPort + '/coverage/download/:browser');
+console.log('Reset coverage        : http://localhost:' + config.listenPort + '/coverage/reset/:browser');
+console.log('Save coverage outPath : http://localhost:' + config.listenPort + '/coverage/output/:browser');
+console.log('Show browser          : http://localhost:' + config.listenPort + '/coverage/browser');
+console.log('WebSquare URL(proxy)  : ' + config.serverUrl );
+console.log('=========================================================================\n')
 
 function matcher(req) {
   var parsed = url.parse(req.url);
@@ -70,9 +72,13 @@ function beautifyDetector(req) {
 coverage.hookLoader(__dirname, {
   verbose: true
 });
+
+
+
 app.use('/coverage', coverage.createHandler({
   verbose: true,
-  resetOnGet: true
+  resetOnGet: true,
+  outputPath: config.outputPath
 }));
 
 app.use(coverage.createClientHandler({
@@ -85,9 +91,13 @@ app.use(coverage.createClientHandler({
 
 app.all("*", function(req, res) {
   apiProxy.web(req, res, {
-    target: config.serverUrl
+    target: config.serverUrl,
+
   });
 });
-
+/*app.use(cacheControl({
+  noCache: false,
+  public: true
+}));*/
 
 app.listen(config.listenPort);
