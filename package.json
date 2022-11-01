@@ -20,7 +20,7 @@
     "express": "4.x",
     "js-beautify": "1.7.x",
     "body-parser": "~1.12.3",
-    "archiver": "0.14.x",
+    "archiver": "5.3.x",
     "http-proxy": "*"
   },
   "engines": {
